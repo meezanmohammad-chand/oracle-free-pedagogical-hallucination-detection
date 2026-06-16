@@ -1,0 +1,1552 @@
+[
+  {
+    "id": 29,
+    "ground_truth": 1,
+    "prediction": 0,
+    "correct": false,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 3,
+      "direct_result": {
+        "extracted_expr": "100 + 6",
+        "expected_result": "106",
+        "computed_result": "106.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: Mandy owes $100 initially, and after 3 months with a 2% monthly interest, the amount she owes can be calculated using the formula A = P(1 + r)^n, where A is the amount owed, P is the principal amount ($100), r is the monthly interest rate (2% or 0.02), and n is the number of months (3). Plugging in the values, A = 100(1 + 0.02)^3 = 100(1.02)^3 = 100 * 1.061208 = $106.12, which is the amount Mandy should give to Benedict."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 25,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 2,
+      "direct_result": {
+        "extracted_expr": "750 - 500",
+        "expected_result": "250",
+        "computed_result": "250.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim states that John rents his car 10 hours a month, but the original question states that he rents it 10 times a month for 3 hours each time, which is a total of 30 hours a month."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 24,
+    "ground_truth": 0,
+    "prediction": 1,
+    "correct": false,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 2,
+      "direct_result": {
+        "extracted_expr": "10000 + 5400",
+        "expected_result": "15400",
+        "computed_result": "15400.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim states that 0.2 = $300, which is mathematically incorrect because 0.2 is equal to $0.20, not $300."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 48,
+    "ground_truth": 1,
+    "prediction": 0,
+    "correct": false,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 2,
+      "direct_result": {
+        "extracted_expr": "31 - 17",
+        "expected_result": "14",
+        "computed_result": "14.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: Since Raymond was born 6 years before Samantha, who is now 31, Raymond is 31 + 6 = 37 years old. Given that Raymond had a son at the age of 23, the son is now 37 - 23 = 14 years old. Since Samantha is 31, the son was born 31 - 14 = 17 years ago."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 5,
+    "ground_truth": 0,
+    "prediction": 1,
+    "correct": false,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 1,
+      "direct_result": {
+        "extracted_expr": "54 - 18",
+        "expected_result": "36",
+        "computed_result": "36.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim x 18 = 72 is incorrect because it implies that x is 4, but the problem states that one-fourth of the seats were occupied by the administrators, which means that 4.5 rows were occupied, not 4 rows, and the total number of seats occupied by the administrators is 18 * 4.5 = 81, not 72."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 6,
+    "ground_truth": 0,
+    "prediction": 0,
+    "correct": true,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 10,
+      "direct_result": {
+        "extracted_expr": "20 + 8 + 20",
+        "expected_result": "48",
+        "computed_result": "48.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: The claim states \"The dogs have 5 dogs\", which is a statement about the number of dogs, not the number of legs, and is therefore mathematically correct as it is a true statement about the quantity of dogs, not the quantity of legs."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 19,
+    "ground_truth": 0,
+    "prediction": 1,
+    "correct": false,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 2,
+      "direct_result": {
+        "extracted_expr": "28 / 2",
+        "expected_result": "14",
+        "computed_result": "14.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: Jean starts with 30 lollipops, eats 2, and has 30 - 2 = 28 lollipops left, but since she wants to package 2 lollipops in one bag, the number of bags she can fill is 28 / 2 = 14, not 28."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 36,
+    "ground_truth": 1,
+    "prediction": 0,
+    "correct": false,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 7,
+      "direct_result": {
+        "extracted_expr": "20 - 16",
+        "expected_result": "4",
+        "computed_result": "4.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: The claim is mathematically correct because the problem states that the company already has 4 vanilla scents available, and there is no information provided that suggests they created or acquired any new vanilla scents, so the number of vanilla scents remains at 4."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 39,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 2,
+      "direct_result": {
+        "extracted_expr": "31 + 50 + 45 + 62",
+        "expected_result": "188",
+        "computed_result": "188.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim is mathematically incorrect because the total thickness of the four books is calculated as 31 + 50 + (50 - 5) + (31 x 2) = 31 + 50 + 45 + 62 = 188 mm, which does not equal 45 mm."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 49,
+    "ground_truth": 1,
+    "prediction": 0,
+    "correct": false,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 6,
+      "direct_result": {
+        "extracted_expr": "20 + 13",
+        "expected_result": "33",
+        "computed_result": "33.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: Since Carlton's team has 13 players, and Zeke's team has 7 more players than Carlton's, Zeke's team has 13 + 7 = 20 players, and the total number of players in both teams is 13 + 20 = 33."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 4,
+    "ground_truth": 0,
+    "prediction": 0,
+    "correct": true,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 9,
+      "direct_result": {
+        "extracted_expr": "1/2 * 20",
+        "expected_result": "10",
+        "computed_result": "10.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: Since Dominick saw half as many robots as helmets and half as many helmets as footballs, and there were 20 helmets, the number of footballs is 20 * 2 = 40, the number of helmets is 20, and the number of robots is 20 / 2 = 10, so the ratio of footballs to helmets is indeed 40:20, which simplifies to 2:1."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 31,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 4,
+      "direct_result": {
+        "extracted_expr": "1.25 * 12",
+        "expected_result": "15",
+        "computed_result": "15.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim that kids will be present is mathematically incorrect because the original problem states that there will be 30 kids, but the claim is not related to the math problem of how much Greg will spend on jello, which is the actual question being asked."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 10,
+    "ground_truth": 0,
+    "prediction": 1,
+    "correct": false,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 2,
+      "direct_result": {
+        "extracted_expr": "30 *",
+        "expected_result": "90",
+        "computed_result": null,
+        "math_error": false,
+        "executor_verdict": "NO_MATH",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim that + 10 = 30 is mathematically incorrect because it implies that adding $10 to $20 results in $30, which is a false statement, as the correct result of the addition is $30, not $30."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 12,
+    "ground_truth": 0,
+    "prediction": 0,
+    "correct": true,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 4,
+      "direct_result": {
+        "extracted_expr": "4 - 2",
+        "expected_result": "2",
+        "computed_result": "2.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: The claim is mathematically correct because the total number of days is 30, and the sum of good and bad days is 12 + 8 = 20, leaving 30 - 20 = 10 days for neutral days, which matches the claim."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 38,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 1,
+      "direct_result": {
+        "extracted_expr": "1% * 5%",
+        "expected_result": "0.05%",
+        "computed_result": "5.0",
+        "math_error": true,
+        "executor_verdict": "ERROR",
+        "error_signal": 1.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim that 1% of the candles will both smell like wet dog and explode is mathematically incorrect because it assumes that the 5% of candles that smell like wet dog are a subset of the 1% that explode, which is not necessarily true, and the correct calculation is 0.05 x 0.01 x 50000 = 25 candles."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 35,
+    "ground_truth": 1,
+    "prediction": 0,
+    "correct": false,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 11,
+      "direct_result": {
+        "extracted_expr": "16 + 16",
+        "expected_result": "32",
+        "computed_result": "32.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: Since Sally Thirtytwo is stated to be 8 years old, and there is no information that contradicts this, the claim is mathematically correct."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 43,
+    "ground_truth": 1,
+    "prediction": 0,
+    "correct": false,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 3,
+      "direct_result": {
+        "extracted_expr": "5+2",
+        "expected_result": "7",
+        "computed_result": "7.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: The claim is mathematically correct because 0.25 multiplied by 20 equals 5, as verified by the calculation 0.25 \u00d7 20 = 5."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 21,
+    "ground_truth": 0,
+    "prediction": 0,
+    "correct": true,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 3,
+      "direct_result": {
+        "extracted_expr": "240-80",
+        "expected_result": "160",
+        "computed_result": "160.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: The claim is mathematically correct because the total number of Chinese team members is 240 - 80 = 160, and since 60 of them are boys, the number of girls on the Chinese team is 160 - 60 = 100, which matches the claim."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 26,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 7,
+      "direct_result": {
+        "extracted_expr": "4 * 10",
+        "expected_result": "40",
+        "computed_result": "40.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim that 400 toys * 10 hours = 60 toys is mathematically incorrect because it implies that the total number of toys produced is 60, whereas the correct calculation is 2 workers producing 6 toys/hour * 10 hours = 120 toys and 2 workers producing 4 toys/hour * 10 hours = 80 toys, for a total of 200 toys, leaving 200 toys still needed to fulfill the order."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 27,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 2,
+      "direct_result": {
+        "extracted_expr": "120*12",
+        "expected_result": "1440",
+        "computed_result": "1440.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim states that the number of female porcupines is 3/5 of the total population, which is 50, so the number of female porcupines is 3/5*50 = 30, but this does not account for the fact that the population of porcupines is increasing due to births, so the number of female porcupines will increase over time, making the initial claim incorrect."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 18,
+    "ground_truth": 0,
+    "prediction": 0,
+    "correct": true,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 6,
+      "direct_result": {
+        "extracted_expr": "120 / 15",
+        "expected_result": "8",
+        "computed_result": "8.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: Parker chews 4 pieces of gum a day, so in 30 days he will chew 4 * 30 = 120 pieces of gum, and since a pack of gum has 15 pieces, he will need 120 / 15 = 8 packs of gum to last him 30 days."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 28,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 1,
+      "direct_result": {
+        "extracted_expr": "2+9",
+        "expected_result": "11",
+        "computed_result": "11.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: Jasper has half as many tubes of blue paint as Ben, so Jasper has 4/2 = 2 tubes of blue paint. Jasper has three times as many tubes of yellow paint as Ben, so Jasper has 3*3 = 9 tubes of yellow paint. Therefore, Jasper has 2 + 9 = 11 tubes of paint in total, not 2."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 46,
+    "ground_truth": 1,
+    "prediction": 0,
+    "correct": false,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 3,
+      "direct_result": {
+        "extracted_expr": "100 - 64",
+        "expected_result": "36",
+        "computed_result": "36.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: The claim is mathematically correct because 44 + 20 = 64, which is the same as 44 + 20 = 64."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 14,
+    "ground_truth": 0,
+    "prediction": 0,
+    "correct": true,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 2,
+      "direct_result": {
+        "extracted_expr": "15 * 1/5",
+        "expected_result": "3",
+        "computed_result": "3.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: The claim is mathematically correct because 1/5 of $15 is calculated as $15 x 1/5 = $15 \u00f7 5 = $3."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 37,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 2,
+      "direct_result": {
+        "extracted_expr": "40 + 60",
+        "expected_result": "100",
+        "computed_result": "100.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim is incorrect because the cost of the haircut is $30 per inch, and May's hair was cut from 10 inches to 8 inches, resulting in a 2-inch cut, so the cost of the haircut is 2 x $30 = $60, not $40, and the total cost is $60 + $40 = $100, not $80."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 2,
+    "ground_truth": 0,
+    "prediction": 0,
+    "correct": true,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 3,
+      "direct_result": {
+        "extracted_expr": "1245 / 15",
+        "expected_result": "83",
+        "computed_result": "83.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: The maximum number of boxes that can be loaded onto the truck is 5000 - 3755 / 15 = 145 boxes, which is less than or equal to 5000 pounds, verifying that the claim is correct."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 30,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 3,
+      "direct_result": {
+        "extracted_expr": "54 + 6",
+        "expected_result": "60",
+        "computed_result": "60.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim that 54 = 108 is mathematically incorrect because it is a false equation, as 54 is not equal to 108."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 32,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 1,
+      "direct_result": {
+        "extracted_expr": "24 / 6",
+        "expected_result": "4",
+        "computed_result": "4.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim \"x 2 = 4\" is mathematically incorrect because it implies that any number multiplied by 2 equals 4, which is not true for all numbers, and the correct result of the multiplication should be 2x, not x 2."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 33,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 5,
+      "direct_result": {
+        "extracted_expr": "5*10",
+        "expected_result": "50",
+        "computed_result": "50.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim is incorrect because the sun's movement is relative to the pyramid, not Sahir's house, and the initial angle of the pyramid is irrelevant to the calculation of the sun's final position."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 13,
+    "ground_truth": 0,
+    "prediction": 1,
+    "correct": false,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 1,
+      "direct_result": {
+        "extracted_expr": "15000 + 30000",
+        "expected_result": "45000",
+        "computed_result": "45000.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim that $5000 equals $10000 is mathematically incorrect because it is a statement of equality between two different values, which is a contradiction."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 23,
+    "ground_truth": 0,
+    "prediction": 1,
+    "correct": false,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 2,
+      "direct_result": {
+        "extracted_expr": "10 + 2",
+        "expected_result": "12",
+        "computed_result": "12.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim that 4 + 1 = 2 is mathematically incorrect because it is a basic arithmetic error, as 4 + 1 equals 5, not 2."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 40,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 1,
+      "direct_result": {
+        "extracted_expr": "20 + 10",
+        "expected_result": "30",
+        "computed_result": "30.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim x 5 = 20 is mathematically incorrect because it implies that the product of an unknown value x and 5 is equal to 20, but the actual calculation of carrots eaten per week is 4 * 5 (weekdays) + 5 * 2 (weekends) = 20 + 10 = 30."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 3,
+    "ground_truth": 0,
+    "prediction": 1,
+    "correct": false,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 2,
+      "direct_result": {
+        "extracted_expr": "6 + 4",
+        "expected_result": "10",
+        "computed_result": "10.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim is incorrect because Tim has 9 red shoeboxes and 1/3 of them is 3, so he uses 3 red shoeboxes, leaving 9 - 3 = 6 red shoeboxes, but the claim only accounts for 4 shoeboxes in total, which is an error."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 45,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 3,
+      "direct_result": {
+        "extracted_expr": "6 / 3",
+        "expected_result": "2",
+        "computed_result": "2.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim that there are 13 cups of mint tea in each row is mathematically incorrect because the total number of cups of mint tea in each row is not equal to 13, but rather 9, as shown by the correct working: Let x be the number of cups of mint tea in each row. Since there are 3 rows, the total number of cups of mint tea is 3x. We know that the total number of cups is 27, and 15 cups are used to brew cinnamon tea, so the total number of cups of chamomile and mint tea is 27 - 15 = 12. Since there are equal amounts of chamomile and mint tea in each row, the total number of cups of chamomile and mint tea is 2x. Therefore, we have 2x = 12, which implies x = 6. Since there are 3 rows, the total number of cups of mint tea is 3x = 3(6) = 18. However, the claim states that there are 13 cups of mint tea in each row, which is incorrect."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 44,
+    "ground_truth": 1,
+    "prediction": 0,
+    "correct": false,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 6,
+      "direct_result": {
+        "extracted_expr": "6000-3500",
+        "expected_result": "2500",
+        "computed_result": "2500.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: The claim that 1/4 of $6000 is $1500 is mathematically correct as 1/4 of 6000 is indeed 1500, as verified by the calculation: 6000 * (1/4) = 6000 / 4 = 1500."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 41,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 2,
+      "direct_result": {
+        "extracted_expr": "10+20",
+        "expected_result": "30",
+        "computed_result": "30.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim is incorrect because if there are 10 eggs in the first basket and twice as many eggs in the second basket, then the second basket has 20 eggs, but the total number of eggs in both baskets is 10 + 20 = 30, not 20."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 20,
+    "ground_truth": 0,
+    "prediction": 1,
+    "correct": false,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 3,
+      "direct_result": {
+        "extracted_expr": null,
+        "expected_result": null,
+        "computed_result": null,
+        "math_error": false,
+        "executor_verdict": "NO_MATH",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim is incorrect because it does not accurately represent the relationship between the variables, and the arithmetic check has already identified an error."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 15,
+    "ground_truth": 0,
+    "prediction": 0,
+    "correct": true,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 2,
+      "direct_result": {
+        "extracted_expr": "50 + 90",
+        "expected_result": "140",
+        "computed_result": "140.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: The claim is mathematically correct because the total number of flowers planted is the sum of the geraniums (90) and the petunias (90 - 40 = 50), which equals 140."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 22,
+    "ground_truth": 0,
+    "prediction": 0,
+    "correct": true,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 3,
+      "direct_result": {
+        "extracted_expr": "8000 * (1.2/100)",
+        "expected_result": "96",
+        "computed_result": "96.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: The claim is mathematically correct because 5,000 * (2.5/100) = 125, which is a straightforward application of the percentage increase formula, where 2.5% of $5,000 is calculated as the product of the base value ($5,000) and the percentage increase (2.5/100)."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 0,
+    "ground_truth": 0,
+    "prediction": 1,
+    "correct": false,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 3,
+      "direct_result": {
+        "extracted_expr": "156 / 3",
+        "expected_result": "52",
+        "computed_result": "52.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim to verify is that Jared types at 52 WPM, but the original student question states that Jared's typing speed increased to 52 WPM after some lessons, implying that this is a measurement, not a constant typing speed, and therefore the claim is incorrect."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 47,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 5,
+      "direct_result": {
+        "extracted_expr": "2.75 * .2",
+        "expected_result": "0.55",
+        "computed_result": "0.55",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim that 0.45 = 2.25 is mathematically incorrect because it is a clear contradiction, as 0.45 is less than 2.25, and the teacher's chalk usage is modeled by the equation 5 - 0.2t = 2, where t is the number of days the teacher has used the chalk, which can be solved to find that the chalk will be recycled after approximately 10 days, at which point the remaining length of chalk will be 0.5 inches, not 2.25 inches."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 1,
+    "ground_truth": 0,
+    "prediction": 1,
+    "correct": false,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 5,
+      "direct_result": {
+        "extracted_expr": "10/2",
+        "expected_result": "5",
+        "computed_result": "5.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim that Jordan has 2 children is mathematically incorrect because the original statement only mentions that Jordan has 2 children who wear diapers, but it does not provide any information about the gender or number of children Jordan has, only that the children wear diapers."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 42,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 1,
+      "direct_result": {
+        "extracted_expr": "30 * 5",
+        "expected_result": "150",
+        "computed_result": "150.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim \"+ 1 = 5\" is mathematically incorrect because it implies that 1 + 1 = 5, which is a fundamental arithmetic error, whereas the correct result of 1 + 1 is 2."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 7,
+    "ground_truth": 0,
+    "prediction": 0,
+    "correct": true,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 3,
+      "direct_result": {
+        "extracted_expr": "480/30",
+        "expected_result": "16",
+        "computed_result": "16.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: The claim is mathematically correct because if the car in the fast lane traveled 480 miles at 60 miles/hour, it took 8 hours, and since the car in the slow lane is traveling at half the speed, it took 16 hours to cover the same distance."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 11,
+    "ground_truth": 0,
+    "prediction": 1,
+    "correct": false,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 1,
+      "direct_result": {
+        "extracted_expr": "6 + 4",
+        "expected_result": "10",
+        "computed_result": "10.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim is incorrect because the beanstalk was 3 inches tall after the first week, doubled to 6 inches after the second week, and then grew another 4 inches, making it 10 inches tall after the third week, not 9 inches."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 16,
+    "ground_truth": 0,
+    "prediction": 1,
+    "correct": false,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 1,
+      "direct_result": {
+        "extracted_expr": "6 + 3 + 8",
+        "expected_result": "17",
+        "computed_result": "17.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim *0.6=12 is mathematically incorrect because 0.6 times 20 miles (the total distance) is 12 miles, which is the distance James swims, not the claim itself."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 34,
+    "ground_truth": 1,
+    "prediction": 1,
+    "correct": true,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 1,
+      "direct_result": {
+        "extracted_expr": "8/4",
+        "expected_result": "2",
+        "computed_result": "2.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim /2=2 is mathematically incorrect because it implies that 1/2 equals 2, which is a fundamental error in arithmetic."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 8,
+    "ground_truth": 0,
+    "prediction": 0,
+    "correct": true,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 4,
+      "direct_result": {
+        "extracted_expr": "50 - 42",
+        "expected_result": "8",
+        "computed_result": "8.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: The claim is mathematically correct because the total cost of the outfit is $60, which is calculated as $25 (shirt) + $35 (shorts) = $60, and Joe has $50, so after the purchase, he will have $50 - $60 = -$10, but since he can't have a negative amount of money, this means he will have to borrow or go over budget, but the claim is still mathematically correct in the sense that the calculation is correct, even if it doesn't make sense in the context of the problem."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  },
+  {
+    "id": 9,
+    "ground_truth": 0,
+    "prediction": 1,
+    "correct": false,
+    "math_executor": {
+      "math_error": true,
+      "executor_verdict": "ERROR",
+      "error_signal": 1.0,
+      "claims_checked": 1,
+      "direct_result": {
+        "extracted_expr": "16 * 3",
+        "expected_result": "48",
+        "computed_result": "48.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "INCORRECT",
+      "flags_error": true,
+      "raw_output": "ISOLATED_VERDICT: INCORRECT\nEXPLANATION: The claim that 2 x 8 = 16 is mathematically correct, but the claim that John consumed 16 calories is incorrect because 2 glasses of milk would be 2 x 8 = 16 ounces, and since milk has 3 calories per ounce, John consumed 16 x 3 = 48 calories."
+    },
+    "filter": {
+      "final_prediction": 1,
+      "quality": "HIGH",
+      "exec_flagged": true,
+      "verification_flagged": true
+    }
+  },
+  {
+    "id": 17,
+    "ground_truth": 0,
+    "prediction": 0,
+    "correct": true,
+    "math_executor": {
+      "math_error": false,
+      "executor_verdict": "CORRECT",
+      "error_signal": 0.0,
+      "claims_checked": 5,
+      "direct_result": {
+        "extracted_expr": "20 + 25 + 23",
+        "expected_result": "68",
+        "computed_result": "68.0",
+        "math_error": false,
+        "executor_verdict": "CORRECT",
+        "error_signal": 0.0
+      }
+    },
+    "verification": {
+      "isolated_verdict": "CORRECT",
+      "flags_error": false,
+      "raw_output": "ISOLATED_VERDICT: CORRECT\nEXPLANATION: Since Jessa is 20 years old and Joan is five years older than Jessa, Joan's age is 20 + 5 = 25, which is not the claim to verify, but since Mary is two years younger than Joan, and Joan is 25, Mary's age is 25 - 2 = 23, and the claim to verify is that Joan is 20, which is INCORRECT, however, the claim to verify is actually that Joan is 20, which is the same as Jessa's age, and the claim to verify is CORRECT because it is actually stating that Joan is the same age as Jessa, not 20 years old."
+    },
+    "filter": {
+      "final_prediction": 0,
+      "quality": "HIGH",
+      "exec_flagged": false,
+      "verification_flagged": false
+    }
+  }
+]
