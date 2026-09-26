@@ -1,4 +1,4 @@
-# Oracle-Free Detection of Pedagogical Hallucinations in Automated Tutoring Systems
+# Oracle-Free Mathematical Solution Verification for Reliable LLM Tutoring
 
 Code and results accompanying the paper:
 
