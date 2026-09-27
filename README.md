@@ -1,85 +1,91 @@
 # Oracle-Free Mathematical Solution Verification for Reliable LLM Tutoring
 
-Code and results accompanying the paper:
-
-**"Oracle-Free Detection of Pedagogical Hallucinations in Automated Tutoring Systems Using Self-Reflective Large Language Models"**
-Meezan Md Chand, Mohd Tauheed Khan — Ala-Too International University, Bishkek, Kyrgyzstan
-
-Submitted to *Intelligent Systems with Applications* (Elsevier).
+Evaluation code and experimental results for the paper **"Oracle-Free Mathematical Solution Verification for Reliable LLM Tutoring: A Safeguard Against Pedagogical Hallucination"** (Chand, Khan & Sohail), currently under review at *Human-Centric Intelligent Systems* (Springer).
 
 ## Overview
 
-This repository contains the implementation of a three-stage, oracle-free pipeline for detecting arithmetic errors in automated tutoring responses:
+Large language models are increasingly used as mathematics tutors, but a tutor that cannot reliably judge whether a student's solution is correct may confidently endorse a wrong answer. We study **oracle-free mathematical solution verification**: deciding whether a candidate solution is correct at inference time, *without* a reference answer, gold label, or task-specific training.
 
-1. **Claim Extractor** — decomposes a tutor response into atomic arithmetic claims
-2. **Math Executor** — evaluates each claim using deterministic symbolic computation (SymPy), without relying on probabilistic LLM scoring
-3. **Isolated Verifier** — provides a secondary LLM-based confirmation, receiving the executor's output as contextual evidence
+The method is a single four-stage pipeline:
 
-When the Math Executor and Isolated Verifier disagree, the executor's verdict takes precedence (`CONFLICT_EXEC_WINS`), ensuring deterministic computation overrides probabilistic agreement.
+1. **Claim extractor** — isolates the checkable content of a solution.
+2. **Dual-mode executor** — evaluates explicit arithmetic *deterministically with SymPy* on GSM8K; on MathDial, where arithmetic is embedded in dialogue and no expression is exposed, it falls back to an *LLM claim-check*.
+3. **Independent verifier** — re-solves the problem from scratch and compares.
+4. **Symmetric conflict-resolution rule** — reconciles the two signals, deferring to the independent verifier in both directions and using the executor only as a fallback.
 
-The system requires **zero annotated training data** and operates entirely at inference time on the GSM8K benchmark with synthetic arithmetic error injection.
+The pipeline requires neither a reference answer nor task-specific training at inference.
 
-## Repository Structure
+## Results
+
+Evaluated across two error regimes: **MathDial** (real teacher-annotated tutoring errors) and **GSM8K** (controlled injected corruptions).
+
+| Dataset  | F1 (mean ± sd)      | Runs | Notes |
+|----------|---------------------|------|-------|
+| MathDial | **0.9367 ± 0.0038** | 3    | Significantly beats Self-Consistency and CRITIC (McNemar *p* < 1e-7); +0.28 F1 over the oracle-free baseline of Daheim et al. |
+| GSM8K    | **0.7241 ± 0.0346** | 3    | Beats Self-Consistency; statistically comparable to CRITIC (McNemar *p* = 0.36). |
+
+An ablation shows the independent re-solving verifier is the primary signal, and that the symmetric conflict-resolution rule protects its precision where the two signals disagree.
+
+### Reproducibility note
+
+The verification pipelines call a hosted large language model (Llama 3.3 70B Instruct via OpenRouter). Because hosted LLM inference is not bit-for-bit deterministic and model endpoints evolve over time, re-running the code will produce results close to — but not necessarily identical to — the reported figures. The exact per-item outputs from the runs reported in the paper are archived under `results/` and are the definitive record of those runs.
+
+## Repository structure
 
 ```
 .
+├── README.md
 ├── code/
-│   ├── gsm8k_pipeline_n50.py    # Primary evaluation run (n=50)
-│   ├── gsm8k_pipeline_n200.py   # Scale validation run (n=200)
-│   └── gsm8k_pipeline_n600.py   # Scale validation run (n=600)
-├── results/
-│   ├── gsm8k_results_n50.json
-│   ├── gsm8k_results_n200.json
-│   └── gsm8k_results_n600.json
-└── README.md
+│   ├── mathdial_pipeline.py     # MathDial: LLM claim-check executor + independent verifier + symmetric rule
+│   └── gsm8k_pipeline.py        # GSM8K: SymPy symbolic executor + independent verifier
+└── results/
+    ├── mathdial/
+    │   ├── run42.json
+    │   ├── run456.json
+    │   └── run789.json
+    └── gsm8k/
+        ├── seed42.json
+        ├── seed456.json
+        └── seed789.json
 ```
 
-## Results Summary
+Only runs with archived per-item result files are included here.
 
-| Run    | N   | F1 (reported in paper) | F1 (this run) | AUROC | Notes                          |
-|--------|-----|-------------------------|----------------|-------|---------------------------------|
-| n=50   | 50  | 0.622                   | 0.618          | 0.580 | Primary evaluation              |
-| n=200  | 200 | 0.590                   | 0.592          | 0.545 | Scale validation                |
-| n=600  | 600 | 0.559                   | 0.559          | 0.503 | Scale validation                |
+## Datasets
 
-Supervised baseline (TAFM, Meng and Yang 2025): F1=0.610, trained on 600 human-annotated pairs.
+This repository does not aim to redistribute the full datasets; obtain them from their original sources under their respective licenses.
 
-## Reproducibility Note
+- **MathDial** — a dialogue tutoring dataset by Macina et al., *Findings of EMNLP 2023* ([github.com/eth-nlped/mathdial](https://github.com/eth-nlped/mathdial)), released under **CC BY-SA 4.0**. The per-turn error annotations and the specific data used here are from the "verify-then-generate" release of Daheim et al., *Findings of EMNLP 2024* ([github.com/eth-lre/verify-then-generate](https://github.com/eth-lre/verify-then-generate)), also **CC BY-SA 4.0**. A stratified 600-instance sample (300 positive / 300 negative) is used.
+- **GSM8K** — Cobbe et al., 2021 ([github.com/openai/grade-school-math](https://github.com/openai/grade-school-math)), **MIT License**. Controlled single-value numerical corruptions.
 
-This pipeline makes live calls to an LLM API (`meta-llama/llama-3.1-8b-instruct` via OpenRouter) for the Claim Extractor and Isolated Verifier stages. Due to inherent stochasticity in LLM sampling, exact reproduction of reported F1/AUROC values is not guaranteed across runs. In our own reproduction runs: n=50 yielded F1=0.618 (paper: 0.622, difference of 0.004), n=200 yielded F1=0.592 (paper: 0.590, difference of 0.002), and n=600 yielded F1=0.559 (paper: 0.559, exact match). All differences are within expected variance from LLM sampling stochasticity, and confirm the reported results are reproducible.
+## Running the pipelines
 
-Note: an initial n=200 attempt produced F1=0.535, a noticeably lower outlier. A second run with identical code, seed, and settings produced F1=0.592, closely matching the paper. This illustrates that individual runs can occasionally diverge due to LLM API variance; we recommend averaging across multiple runs when exact reproduction is critical.
-
-Original experiment logs are provided in `/results/` as evidence of the reported numbers.
-
-## Setup
+The pipelines call **Llama 3.3 70B Instruct** via the [OpenRouter](https://openrouter.ai/) API.
 
 ```bash
-pip install openai sympy scikit-learn datasets
-export OPENROUTER_API_KEY="your_key_here"
-python code/gsm8k_pipeline_n50.py
+pip install requests sympy
+export OPENROUTER_API_KEY="your-key-here"
+
+python code/gsm8k_pipeline.py      # SymPy required
+python code/mathdial_pipeline.py
 ```
 
-Each script automatically saves its results to a JSON file in the working directory upon completion.
-
-## Dataset
-
-Experiments use the [GSM8K](https://huggingface.co/datasets/openai/gsm8k) test split (grade-school math word problems). Arithmetic errors are synthetically injected into model-generated solutions via controlled perturbation (one of four operations: +1, -1, ×2, ÷2 applied to a randomly selected numerical value).
+Runs checkpoint periodically and write per-item JSON results to `results/`.
 
 ## Citation
 
-If you use this code, please cite:
-
-```
-Chand, M. M., & Khan, M. T. (2026). Oracle-Free Detection of Pedagogical Hallucinations
-in Automated Tutoring Systems Using Self-Reflective Large Language Models.
-Intelligent Systems with Applications.
+```bibtex
+@unpublished{chand2026oraclefree,
+  title  = {Oracle-Free Mathematical Solution Verification for Reliable LLM Tutoring: A Safeguard Against Pedagogical Hallucination},
+  author = {Chand, Meezan Md and Khan, Mohd Tauheed and Sohail, Shahab Saquib},
+  year   = {2026},
+  note   = {Under review at Human-Centric Intelligent Systems (Springer)}
+}
 ```
 
 ## License
 
-[Add your preferred license, e.g. MIT]
-
-## Contact
-
-Meezan Md Chand — meezanmohammad.chand@alatoo.edu.kg
+- **Code** (`code/`) — MIT License (see `LICENSE`).
+- **GSM8K** (Cobbe et al., 2021) is distributed by OpenAI under the MIT License.
+- **MathDial** (Macina et al., 2023) and the error annotations of Daheim et al. (2024) are distributed under **CC BY-SA 4.0**. Any MathDial-derived files in this repository (e.g. per-item results under `results/mathdial/`) are therefore made available under **CC BY-SA 4.0**, with attribution to Macina et al. (2023).
+```
